@@ -8,3 +8,5 @@ Pipfile.lock
 .LSOverride
 running_results.txt
 inputs/*
+!inputs/.gitkeep
+!otuputs/.gitkeep
