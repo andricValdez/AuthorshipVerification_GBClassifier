@@ -1,0 +1,18 @@
+
+PASOS PARA SUBIR IMAGEN A TIRA
+1. docker build . (crea una imagen de acuerdo al Dockerfile, NOTA: para que funcione correctamente en tu terminal debes estar situado en la raiz del proyecto)
+2. docker images (enlista las imagenes creadas, junto con su ID)
+3. docker tag <image_id> <tag_name> (asigna un tag a una imagen)
+	ejemplo:
+		docker tag 46f1ccf434eb registry.webis.de/code-research/tira/tira-user-pan23-cdav-2/gnc_clf:version1.0
+	donde:
+		"46f1ccf434eb" es el ID de la imagen (ver paso 2)
+		"registry.webis.de/code-research/tira/tira-user-pan23-cdav-2/gnc_clf:version1.0" es el tag que se le asigna
+		la parte del tag "registry.webis.de/code-research/tira/tira-user-pan23-cdav-2/ " es un prefijo que te da TIRA (es personal por cada equipo)
+		la parte del tag "gnc_clf:version1.0" es el nombre que tu le quieras asignar a tu imagen
+4. docker login -u <user_name> -p <password> <respository>  (con este comando te logeas a Docker Hub, TIRA te lo da y es personal por equipo)
+	ejemplo:
+		docker login -u tira-user-pan23-cdav-2 -p3Cso67crj6TYCEC871c7 registry.webis.de
+5. docker push <image> (con este comando se hace push de la imagen (antes creada y taggeda) a Docker Hub)
+	ejemplo:
+		docker push registry.webis.de/code-research/tira/tira-user-pan23-cdav-2/gnc_clf:version1.0

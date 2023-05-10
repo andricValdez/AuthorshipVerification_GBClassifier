@@ -1,0 +1,10 @@
+*.py[cod]
+**/__pycache__
+**/.vscode
+**/env
+Pipfile.lock
+.DS_Store
+.AppleDouble
+.LSOverride
+running_results.txt
+inputs/*
